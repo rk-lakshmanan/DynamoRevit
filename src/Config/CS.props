@@ -3,6 +3,15 @@
   <ImportGroup Label="PropertySheets" Condition=" Exists('$(SolutionDir)Config/user_local.props') ">
     <Import Project="$(SolutionDir)Config/user_local.props" />
   </ImportGroup>
+    <PropertyGroup>
+	<DynamoCorePath Condition = "!Exists('$(DynamoCorePath)')">$(SolutionDir)\packages\DynamoVisualProgramming.Core.1.0.0-beta3\lib\net45</DynamoCorePath>
+	<DynamoZeroTouchPath Condition = "!Exists('$(DynamoZeroTouchPath)')">$(SolutionDir)\packages\DynamoVisualProgramming.ZeroTouchLibrary.1.0.0-beta3\lib\net45</DynamoZeroTouchPath>
+	<DynamoWpfUIPath Condition = "!Exists('$(DynamoWpfUIPath)')">$(SolutionDir)\packages\DynamoVisualProgramming.WpfUILibrary.1.0.0-beta4\lib\net45</DynamoWpfUIPath>
+	<DynamoWpfUINodesPath Condition = "!Exists('$(DynamoWpfUINodesPath)')">$(DynamoWpfUIPath)</DynamoWpfUINodesPath>
+	<DynamoServicesPath Condition = "!Exists('$(DynamoServicesPath)')">$(SolutionDir)\packages\DynamoVisualProgramming.DynamoServices.1.0.0-beta3\lib\net45</DynamoServicesPath>
+	<DynamoTestPackagePath Condition = "!Exists('$(DynamoTestPackagePath)')">$(SolutionDir)\packages\DynamoVisualProgramming.Tests.1.0.0-beta4\lib\net45</DynamoTestPackagePath>
+	<DynamoCoreSDKPath Condition = "!Exists('$(DynamoCoreSDKPath)')">$(SolutionDir)\packages\DynamoVisualProgramming.Tests.1.0.0-beta4\lib\net45</DynamoCoreSDKPath>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
 	<VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
